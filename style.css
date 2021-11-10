@@ -1,32 +1,33 @@
 .grid-container {
   display: inline-grid;
-  grid-template-columns: 50px 50px 50px;
-  grid-template-rows: 50px 50px 50px;
-  border: 1px solid black;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  border: 1px solid #000000;
   grid-gap: 1px;
   background-color: black;
 }
 
 .grid-container > div {
   background-color: white;
-  padding: 15px;
+  color: red;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.button1 {
-  background-color: #4caf50; /* Green */
-  color: white;
-  padding: 10px 16px;
-  text-align: center;
-  text-decoration: none;
-  /* display: inline-block; */
-  font-size: 16px;
-}
-/* .button1:hover {
-  background-color: #3e8e41;
-} */
 
-.button2 {
-  background-color: #614caf; /* Green */
+.grid-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  opacity: 0.1;
+  display: none;
+}
+
+#button1 {
+  background-color: #4caf50;
+  /* Green */
   color: white;
   padding: 10px 16px;
   text-align: center;
@@ -34,6 +35,25 @@
   /* display: inline-block; */
   font-size: 16px;
 }
-/* .button2:hover {
-  background-color: #3e8e41;
-} */
+
+#button2 {
+  background-color: #614caf;
+  /* Green */
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 16px;
+}
+
+#button3 {
+  background-color: #d36544;
+  /* Green */
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 16px;
+}

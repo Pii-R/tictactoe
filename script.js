@@ -3,7 +3,6 @@ window.onload = function(){
 let b1 = document.getElementById('button1')
 let b2 = document.getElementById('button2')
 let b_reset = document.getElementById('button3')
-let choices_array  = ["x","o",""]
 let choice = null
 let count_click = 0 //it will follow how many clicks on button there are
 let win = false
@@ -28,6 +27,7 @@ function update_grid(){
 
     // over line
     if (!win){
+
         s_diag_1 = new Set([grid[0],grid[4],grid[8]])
         s_diag_2 = new Set([grid[2],grid[4],grid[6]])
     
@@ -56,6 +56,10 @@ function update_grid(){
                 return
             }       
         }
+        if (!grid.includes(-1)){
+            alert("nobody wins")
+    }
+
     }
 }
 
@@ -72,9 +76,10 @@ function get_next_choice(choice){
 
 function change_text(e) {
     var tgt= e.target
-    if (choice !== null){
+    // console.log(tgt.firstElementChild)
+    if (choice !== null & tgt.childElementCount>0){
         if (tgt.parentElement.className=='grid-container' &
-            tgt.className!='grid-container' & 1){
+            tgt.className!='grid-container' & !tgt.children[0].src.endsWith("png")){
             tgt.children[0].src = choice
             tgt.children[0].style.display="block"
             index = parseInt(tgt.id)
@@ -83,11 +88,7 @@ function change_text(e) {
             // tgt.innerHTML =  choice
             choice = get_next_choice(choice) 
             count_click++
-            console.log("next_choice is " + choice,count_click)
             }
-        else if (!choices_array.includes(tgt.innerHTML) & tgt.parentElement.className=='grid-container') {
-            tgt.innerHTML="";
-        }
     }
 }
 

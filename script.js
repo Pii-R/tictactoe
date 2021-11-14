@@ -17,9 +17,10 @@ function check_array(arr){
     s = new Set(arr)
     if (s.size == 1 & (s.has("x") | s.has("o"))){
         alert(s.values().next().value+ " has win")
-        return true
+        reset()
+        win = false
     }
-    return false
+
 }
 
 function reset(){    

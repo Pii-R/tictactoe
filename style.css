@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 body {
-  background-image: url("background/background.png");
+  background-image: url("images/background.png");
 }
 .title {
   text-align: center;
@@ -69,27 +69,22 @@ body {
 }
 #button1 {
   background-color: #ffffff;
-  /* Green */
   color: black;
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
-  /* display: inline-block; */
 }
 
 #button2 {
   background-color: black;
-  /* Green */
   color: white;
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
-  /* display: inline-block; */
 }
 
 #button3 {
   background-color: #ffffff;
-  /* Green */
   color: red;
   padding: 10px 16px;
   text-align: center;

@@ -22,6 +22,18 @@ function check_array(arr){
     return false
 }
 
+function reset(){    
+    for (i=0;i<9;i++){
+        document.getElementById(i).children[0].src = "";
+    }
+    win = false
+    count_click = 0
+    choice = null
+    grid = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
+    document.getElementById("chosen-symbol").src =""
+
+
+}
 function update_grid(){
     // update grid when player click on the board
 
@@ -32,13 +44,13 @@ function update_grid(){
         s_diag_2 = new Set([grid[2],grid[4],grid[6]])
     
         if (check_array(s_diag_1)){
-            alert("win over first diag")
+            // alert("win over first diag")
             win = true
             return
 
         }
         else if (check_array(s_diag_2)) {
-            alert("win over second diag")
+            // alert("win over second diag")
             win = true
             return
         }
@@ -46,12 +58,12 @@ function update_grid(){
             s_line = new Set([grid[0+i*3],grid[i*3+1],grid[i*3+2]])
             s_col = new Set([grid[0+i],grid[3+i],grid[6+i]])
             if (check_array(s_line)){
-                alert("win over line")
+                // alert("win over line")
                 win = true
                 return
             }
             if (check_array(s_col)){
-                alert("win over colums")
+                // alert("win over colums")
                 win = true
                 return
             }       
@@ -78,15 +90,17 @@ function change_text(e) {
     var tgt= e.target
     // console.log(tgt.firstElementChild)
     if (choice !== null & tgt.childElementCount>0){
-        if (tgt.parentElement.className=='grid-container' &
-            tgt.className!='grid-container' & !tgt.children[0].src.endsWith("png")){
+        if (tgt.parentElement.className=='grid' &
+            tgt.className!='grid' & !tgt.children[0].src.endsWith("png")){
             tgt.children[0].src = choice
             tgt.children[0].style.display="block"
             index = parseInt(tgt.id)
             grid[index]=dict_img_to_sym[choice]
             console.log(grid)
             // tgt.innerHTML =  choice
-            choice = get_next_choice(choice) 
+            choice = get_next_choice(choice)
+            document.getElementById("chosen-symbol").src = choice
+
             count_click++
             }
     }
@@ -95,22 +109,18 @@ function change_text(e) {
 b1.onclick = function(){ // button to choose cross
     if (count_click == 0){
     choice ="images/cross.png";
+    document.getElementById("chosen-symbol").src = choice
+
     }
 }
 
 b2.onclick = function(){// button to choose circle
     if (count_click == 0){
     choice ="images/circle.png";  
+    document.getElementById("chosen-symbol").src = choice
+
     }
 }
    
-b_reset.onclick = function(){
-    for (i=0;i<9;i++){
-        document.getElementById(i).children[0].src = "";
-    }
-    win = false
-    count_click = 0
-    choice = null
-    grid = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
-}
+b_reset.onclick = reset
 };

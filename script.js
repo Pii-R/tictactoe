@@ -45,13 +45,11 @@ function update_grid(){
         s_diag_2 = new Set([grid[2],grid[4],grid[6]])
     
         if (check_array(s_diag_1)){
-            // alert("win over first diag")
             win = true
             return
 
         }
         else if (check_array(s_diag_2)) {
-            // alert("win over second diag")
             win = true
             return
         }
@@ -59,12 +57,10 @@ function update_grid(){
             s_line = new Set([grid[0+i*3],grid[i*3+1],grid[i*3+2]])
             s_col = new Set([grid[0+i],grid[3+i],grid[6+i]])
             if (check_array(s_line)){
-                // alert("win over line")
                 win = true
                 return
             }
             if (check_array(s_col)){
-                // alert("win over colums")
                 win = true
                 return
             }       
@@ -124,4 +120,5 @@ b2.onclick = function(){// button to choose circle
 }
    
 b_reset.onclick = reset
+
 };

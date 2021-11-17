@@ -33,19 +33,6 @@ function reset(){
     grid = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
     document.getElementById("chosen-symbol").src =""
 
-<<<<<<< HEAD
-    if (check_array(s_diag_1)){
-        alert("win over first diag")
-        win = true
-
-
-    }
-    else if (check_array(s_diag_2)) {
-        alert("win over second diag")
-        win = true
-
-    }
-=======
 
 }
 function update_grid(){
@@ -53,28 +40,18 @@ function update_grid(){
 
     // over line
     if (!win){
->>>>>>> 0ebe4e7a50aacb902bc2a3a3c9675f2b84a66464
 
         s_diag_1 = new Set([grid[0],grid[4],grid[8]])
         s_diag_2 = new Set([grid[2],grid[4],grid[6]])
     
         if (check_array(s_diag_1)){
             win = true
-<<<<<<< HEAD
- 
-            
-=======
             return
 
->>>>>>> 0ebe4e7a50aacb902bc2a3a3c9675f2b84a66464
         }
         else if (check_array(s_diag_2)) {
             win = true
-<<<<<<< HEAD
-        }       
-=======
             return
->>>>>>> 0ebe4e7a50aacb902bc2a3a3c9675f2b84a66464
         }
         for (let i=0;i<3;i++){
             s_line = new Set([grid[0+i*3],grid[i*3+1],grid[i*3+2]])

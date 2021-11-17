@@ -37,13 +37,13 @@ function check_win(){
     if (check_array(s_diag_1)){
         alert("win over first diag")
         win = true
-        return
+
 
     }
     else if (check_array(s_diag_2)) {
         alert("win over second diag")
         win = true
-        return
+
     }
 
     
@@ -54,14 +54,12 @@ function check_win(){
         if (check_array(s_line)){
             alert("win over line")
             win = true
-            return
+ 
             
         }
         if (check_array(s_col)){
             alert("win over colums")
             win = true
-            return
-            
         }       
         }
 

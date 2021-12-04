@@ -9,7 +9,8 @@ let win = false
 let grid = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
 let dict_img_to_sym = {"images/circle.png":"o","images/cross.png":"x"}
 //eventListener
-document.addEventListener('click',change_text, false);
+
+document.addEventListener('click',change_text, false); //todo use onclick on grid > div instead of addeventlistener
 document.addEventListener('click',update_grid,false)
 
 
